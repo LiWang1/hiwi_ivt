@@ -490,10 +490,10 @@ createModeTable <- function(trips, key){
         
         switch (mode,
                 "walking" = modetable <- rbind(modetable, c(trips$ID[i],trips$Tripnr[i], mode, as.vector(unlist(data.walking(origin = origin,destination =  destination, departuretime = departuretime))))),
-                "bicycling" = modetable <- rbind(modetable, c(trips$ID[i],trips$Tripnr[i], mode, as.vector(unlist(data.bicycling(origin = origin, destination = destination,departuretime =  departuretime))))),
+                #"bicycling" = modetable <- rbind(modetable, c(trips$ID[i],trips$Tripnr[i], mode, as.vector(unlist(data.bicycling(origin = origin, destination = destination,departuretime =  departuretime))))),
                 "driving" = modetable <- rbind(modetable, c(trips$ID[i],trips$Tripnr[i], mode, as.vector(unlist(data.driving(origin = origin,destination =  destination,departuretime =  departuretime))))),
-                "transit" = modetable <- rbind(modetable, c(trips$ID[i],trips$Tripnr[i], mode, data.transit(origin = origin,destination =  destination,departuretime =  departuretime))),
-                "av" = modetable <- rbind(modetable, c(trips$ID[i],trips$Tripnr[i], mode, data.av(origin = origin,destination =  destination, departuretime = departuretime)))                
+                "transit" = modetable <- rbind(modetable, c(trips$ID[i],trips$Tripnr[i], mode, data.transit(origin = origin,destination =  destination,departuretime =  departuretime)))
+                #"av" = modetable <- rbind(modetable, c(trips$ID[i],trips$Tripnr[i], mode, data.av(origin = origin,destination =  destination, departuretime = departuretime)))                
                 
         ) 
       }
